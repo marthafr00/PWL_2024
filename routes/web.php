@@ -50,3 +50,8 @@ Route::get('/articles/{article}', function
 ($articleId){
     return " Artikel ke-: ".$articleId;
 });
+
+Route::get('/user/{name?}', function ($name='John'){
+    return 'Nama saya '.$name;
+});
+
