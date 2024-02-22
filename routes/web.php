@@ -16,3 +16,23 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/hello', function () {
+    return 'Hello World';
+});
+
+Route::get('/world', function () {
+    return 'World';
+});
+
+Route::get('/', function() {
+    return 'Selamat Datang';
+});
+
+Route::get('/about', function(){
+    return 'NIM: 2141762050, Nama: NADILLA AMANDA MARTHA AFRHISSA';
+});
+
+Route::get('/about', function () {
+    return view('about');
+});
