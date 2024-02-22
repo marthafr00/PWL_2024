@@ -56,3 +56,7 @@ Route::resource('photos', PhotoController::class)->only([
     'create', 'store', 'update', 'destroy'
    ]);
 
+Route::get('/greeting', function () {
+    return view('hello', ['name' => 'Nadilla']);
+});
+
