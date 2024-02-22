@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\PageController;
+use App\Http\Controllers\WelcomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,21 +19,15 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/hello', function () {
-    return 'Hello World';
-});
+Route::get('/hello', [WelcomeController::class,'hello']);
 
 Route::get('/world', function () {
     return 'World';
 });
 
-Route::get('/', function() {
-    return 'Selamat Datang';
-});
+Route::get('/index', [PageController::class,'index']);
 
-Route::get('/about', function(){
-    return 'NIM: 2141762050, Nama: NADILLA AMANDA MARTHA AFRHISSA';
-});
+Route::get('/hello', [PageController::class,'about']);
 
 Route::get('/about', function () {
     return view('about');
@@ -46,10 +42,7 @@ Route::get('/posts/{post}/comments/{comment}', function
     return 'Pos ke-'.$postId." Komentar ke-: ".$commentId;
 });
 
-Route::get('/articles/{article}', function
-($articleId){
-    return " Artikel ke-: ".$articleId;
-});
+Route::get('/articles', [PageController::class,'articles']);
 
 Route::get('/user/{name?}', function ($name='John'){
     return 'Nama saya '.$name;
