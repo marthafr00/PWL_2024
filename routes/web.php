@@ -36,3 +36,17 @@ Route::get('/about', function(){
 Route::get('/about', function () {
     return view('about');
 });
+
+Route::get('/user/{Nadilla}', function($name) {
+    return 'Nama saya '.$name;
+});
+
+Route::get('/posts/{post}/comments/{comment}', function
+($postId, $commentId){
+    return 'Pos ke-'.$postId." Komentar ke-: ".$commentId;
+});
+
+Route::get('/articles/{article}', function
+($articleId){
+    return " Artikel ke-: ".$articleId;
+});
